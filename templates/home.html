@@ -9,10 +9,10 @@
 <body>
 	<form class="custom-form" name="myForm" action="{{ url_for('result')}}" onsubmit="return validateForm()"
 		method="POST">
-		<h1 style="color:white;">ระบบวิเคราะห์ระดับภาษาไทย</h1>
+		<h3 style="color:rgb(4, 4, 4);">ระบบวิเคราะห์ความรู้สึกทางภาษา</h3>
 		<br/>
 		<div style="display: flex; flex-direction: row;">
-			<textarea style="font-size: 20px;" name="message" placeholder="กรุณากรอกข้อความ <enter เพื่อใส่ข้อความใหม่>" rows="15" cols="80" class="input1"></textarea>
+			<textarea style="font-size: 20px;" name="message" placeholder="กรุณากรอกข้อความ <enter เพื่อใส่ข้อความใหม่>" rows="10" cols="80" class="input1"></textarea>
 		</div>
 		<br />
 		<div style="margin-left: 2rem;">
@@ -33,9 +33,12 @@
 
 <style type="text/css">
 	body {
-		background-image: url('../static/images/background.jpg');
+		background-image: url('../static/images/background.png');
+	
 		width: 100vw;
 		height: 100vh;
+		
+
 	}
 
 	.input1 {

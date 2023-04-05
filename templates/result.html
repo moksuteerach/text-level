@@ -9,10 +9,10 @@
 <body>
 	<form class="custom-form" name="myForm" action="{{ url_for('result')}}" onsubmit="return validateForm()"
 		method="POST">
-		<h1 style="color:white;">ผลวิเคราะห์ระดับภาษาไทย</h1>
+		<h3 style="color:rgb(0, 0, 0);">ผลวิเคราะห์ระดับภาษาไทย</h3>
 		<br />
 		<div class="grid-container-f">
-			<div class="input1" style="background-color: white; margin-top: 0.5rem;">
+			<div class="input1" style="background-color: rgb(255, 255, 255); margin-top: 4rem;">
 				<table class="table">
 					<thead>
 						<tr>
@@ -37,7 +37,7 @@
 					<thead>
 						<tr>
 							<th>ประเภท</th>
-							<th>ความเป็นไปได้</th>
+							<th>ผลการคำนวณ</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -61,8 +61,8 @@
 </body>
 <style type="text/css">
 	body {
-		background-image: url('../static/images/background.jpg');
-		width: 100vw;
+		background-image: url('../static/images/background.png');
+		width: 95vw;
 		height: 100vh;
 	}
 
