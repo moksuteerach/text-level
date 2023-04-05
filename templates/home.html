@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+	<form class="custom-form" name="myForm" action="{{ url_for('result')}}" onsubmit="return validateForm()"
+		method="POST">
+		<h1 style="color:white;">ระบบวิเคราะห์ระดับภาษาไทย</h1>
+		<br/>
+		<div style="display: flex; flex-direction: row;">
+			<textarea style="font-size: 20px;" name="message" placeholder="กรุณากรอกข้อความ <enter เพื่อใส่ข้อความใหม่>" rows="15" cols="80" class="input1"></textarea>
+		</div>
+		<br />
+		<div style="margin-left: 2rem;">
+			<input type="submit" class="button-32" value="ตรวจสอบ">
+		</div>
+	</form>
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type=text/javascript>
+	function validateForm() {
+	var x = document.forms["myForm"]["message"].value;
+		if (x == "") {
+		alert("กรุณากรอกประโยคที่คุณต้องการ");
+		return false;
+		}
+  	};
+</script>
+
+<style type="text/css">
+	body {
+		background-image: url('../static/images/background.jpg');
+		width: 100vw;
+		height: 100vh;
+	}
+
+	.input1 {
+		margin-left: 2rem;
+		padding: 25px;
+		box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+		border-radius: 10px 10px 10px 10px
+	}
+
+	.custom-form {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+	}
+
+	.button-32 {
+		font-family: monospace;
+		background-color: white;
+		border-radius: 12px;
+		color: #000;
+		cursor: pointer;
+		font-weight: bold;
+		padding: 16px 50px;
+		text-align: center;
+		transition: 200ms;
+		box-sizing: border-box;
+		border: 0;
+		font-size: 16px;
+		user-select: none;
+		-webkit-user-select: none;
+		touch-action: manipulation;
+	}
+
+	.button-givefeed {
+		font-family: monospace;
+		background-color: white;
+		border-radius: 12px;
+		color: #000;
+		cursor: pointer;
+		font-weight: bold;
+		padding: 14px 40px;
+		text-align: center;
+		transition: 200ms;
+		box-sizing: border-box;
+		border: 0;
+		font-size: 16px;
+		user-select: none;
+		-webkit-user-select: none;
+		touch-action: manipulation;
+	}
+
+	.button-32:not(:disabled):hover,
+	.button-32:not(:disabled):focus {
+		outline: 0;
+		background: white;
+		box-shadow: 0 0 0 2px rgba(0, 0, 0, .2), 0 3px 8px 0 rgba(0, 0, 0, .15);
+	}
+
+	.button-32:disabled {
+		filter: saturate(0.2) opacity(0.5);
+		cursor: not-allowed;
+	}
+
+	.button:after {
+		content: "";
+		background: #f1f1f1;
+		display: block;
+		position: absolute;
+		padding-top: 300%;
+		padding-left: 350%;
+		margin-left: -20px !important;
+		margin-top: -120%;
+		opacity: 0;
+		transition: all 0.8s
+	}
+
+	.button:active:after {
+		padding: 0;
+		margin: 0;
+		opacity: 1;
+		transition: 0s
+	}
+
+	#main {
+		margin-left: 2rem;
+		width: 700px;
+		height: 305px;
+		border: 2px solid #c3c3c3;
+		display: flex;
+		flex-direction: row;
+		background-color: white;
+		text-align: left;
+		font-size: 18;
+	}
+
+	.hide {
+		display: none;
+	}
+
+	#myDIV {
+		width: 100%;
+		padding: 50px 0;
+		text-align: center;
+		background-color: lightblue;
+		margin-top: 20px;
+		display: none;
+	}
+
+	.myDIV:hover+.hide {
+		display: block;
+		color: red;
+	}
+
+	.sidebar {
+		height: 100%;
+		width: 0;
+		position: fixed;
+		z-index: 99;
+		top: 0;
+		right: 0;
+		background-color: #111;
+		overflow-x: hidden;
+		transition: 0.5s;
+		padding-top: 60px;
+	}
+
+	.sidebar a {
+		padding: 8px 8px 8px 32px;
+		text-decoration: none;
+		font-size: 25px;
+		color: #818181;
+		display: block;
+		transition: 0.3s;
+	}
+
+	.sidebar a:hover {
+		color: #f1f1f1;
+	}
+
+	.sidebar .closebtn {
+		position: absolute;
+		top: 0;
+		right: 25px;
+		font-size: 36px;
+		margin-left: 50px;
+	}
+
+	.openbtn {
+		font-size: 16px;
+		cursor: pointer;
+		color: black;
+		padding: 10px 15px;
+		border: none;
+		margin-left: 2rem;
+		justify-content: center;
+		position: fixed;
+		display: grid;
+	}
+
+	.openbtn:hover {
+		background-color: #444;
+	}
+
+	#comment {
+		transition: margin-left 2rem;
+	}
+
+	@media screen and (max-height: 450px) {
+		.sidebar {
+			padding-top: 15px;
+		}
+
+		.sidebar a {
+			font-size: 18px;
+		}
+	}
+
+	.headernav {
+		display: grid;
+		width: 100%;
+		height: 50px;
+		grid-template-columns: 500px 5px;
+	}
+</style>
+
+</html>
